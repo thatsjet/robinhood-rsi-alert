@@ -48,5 +48,6 @@ Logging you in...
 
 RSI of 69.54420633505075 is not in window
 
-
 ```
+
+If this is a new session, the login may prompt you for your MFA token if required.
