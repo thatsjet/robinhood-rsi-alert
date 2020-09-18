@@ -7,13 +7,6 @@ import pandas as pd
 import schedule
 import time
 
-
-''' NOTE
-   -  IF RSI is not matching with RobinHood, then try either increasing the timeperiod
-   value or the data frequency, but not sure I can do that.
-'''
-
-
 # READ CONFIG FOR USER, PASS, STOCK
 print("Reading configuration data\n")
 with open("config.yml", 'r') as stream:
