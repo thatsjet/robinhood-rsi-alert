@@ -47,10 +47,11 @@ def run():
 
     DATA = np.array(df['close_price'])
 
-    print("RSI Period is " + str(rsiPeriod))
+    # If it's early in the day there won't be enough records so just
+    # use the length of the dataframe isntead
     if(len(DATA) < rsiPeriod):
         rsiPeriod = len(DATA)
-    print("RSI Period is " + str(rsiPeriod))
+        print("rsiPeriod is larger than DATA length, indicator may not be accurate")
 
     # TODO if DATA.len is < rsiPeriod then rsiPeriod = DATA.len
     rsi = ti.RSI(DATA, timeperiod=rsiPeriod)
@@ -70,9 +71,9 @@ def run():
 # DO one run, then schedule to run every 5 minutes
 run()
 
-""" schedule.every(5).minutes.do(run)
+schedule.every(5).minutes.do(run)
 while True:
     schedule.run_pending()
-    time.sleep(1) """
+    time.sleep(1)
 
 exit()
