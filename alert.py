@@ -59,10 +59,10 @@ def run():
 
     if(rsi[-1] < rsiFloor):
         print('RSI below ' + str(rsiFloor))
-        pync.notify('RSI ' + str(rsi[-1]) + ' is below ' + str(rsiFloor) , title="Gold Target")
+        pync.notify('RSI ' + str(rsi[-1]) + ' is below ' + str(rsiFloor) , title="Target floor reached")
     elif(rsi[-1] > rsiCeiling):
         print('RSI above ' + str(rsiCeiling))
-        pync.notify('RSI ' + str(rsi[-1]) + ' is above ' + str(rsiCeiling) , title="Gold Target")
+        pync.notify('RSI ' + str(rsi[-1]) + ' is above ' + str(rsiCeiling) , title="Target ceiling reached")
     else:
         print("RSI of " + str(rsi[-1]) + " is not in window\n")
         pass
