@@ -1,4 +1,4 @@
-# robinhood-gold-alert
+# robinhood-rsi-alert
 I wanted a way to identify points where my favorite stock reached a potential buy/sell trigger and I'm fond of RSI as a good momentum indicator to help with that. So, this bot will continuosly grab close price data and calculate relative strength using the `ta-lib` library. Once started it runs continuously and will send an alert (MacOS notifier) when the RSI hits the cieling or floor defined in the config.
 
 If you're not on a Mac, you'll want to comment out the `pync` calls and use some other method to alert or just watch the terminal I suppose.
