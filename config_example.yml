@@ -1,0 +1,10 @@
+robinhood:
+  user: "your username"
+  pass: "your password"
+
+symbol: "SPY"
+
+rsi:
+  ceiling: 70
+  floor: 30
+  period: 14
