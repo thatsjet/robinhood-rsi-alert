@@ -74,11 +74,14 @@ def run():
 
 print("Running RSI monitor on multiple's of 5 for best accuracy")
 # DO one run, then schedule to run every 5 minutes
-if (datetime.now() % 10 == 5) or (datetime.now() % 10 == 0):
-    time.sleep(5)
-    run()
-else:
-    time.sleep(1)
+while True:
+    now = datetime.now()
+    if (now.minute % 10 == 5) or (now.minute % 10 == 0):
+        time.sleep(5)
+        run()
+        break
+    else:
+        time.sleep(1)
 
 schedule.every(5).minutes.do(run)
 while True:
