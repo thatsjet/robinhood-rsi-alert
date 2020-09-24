@@ -7,6 +7,13 @@ import pandas as pd
 import schedule
 import time
 
+'''
+TODO
+- Start on a 5 minute mark
+- Print a timestamp at the beginning of the message line
+
+'''
+
 # READ CONFIG FOR USER, PASS, STOCK
 print("Reading configuration data\n")
 with open("config.yml", 'r') as stream:
@@ -46,9 +53,8 @@ def run():
         rsiPeriod = len(DATA)
         print("rsiPeriod is larger than DATA length, indicator may not be accurate")
 
-    # TODO if DATA.len is < rsiPeriod then rsiPeriod = DATA.len
+    # if DATA.len is < rsiPeriod then rsiPeriod = DATA.len
     rsi = ti.RSI(DATA, timeperiod=rsiPeriod)
-
 
     if(rsi[-1] < rsiFloor):
         message = 'RSI ' + str(rsi[-1]) + ' is below ' + str(rsiFloor)
@@ -62,9 +68,16 @@ def run():
         print("RSI of " + str(rsi[-1]) + " is not in window\n")
         pass
 
+# Calculate current time, subtract from 5, wait that amount of time
 
+
+print("Running RSI monitor on multiple's of 5 for best accuracy")
 # DO one run, then schedule to run every 5 minutes
-run()
+if (datetime.now() % 10 == 5) or (datetime.now() % 10 == 0):
+    time.sleep(5)
+    run()
+else:
+    time.sleep(1)
 
 schedule.every(5).minutes.do(run)
 while True:
