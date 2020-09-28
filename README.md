@@ -7,7 +7,7 @@ If you're not on a Mac, you'll want to comment out the `pync` calls and use some
 
 Clone repository
 ```
-$ git clone git@github.com:thatsjet/robinhood-gold-alert.git
+$ git clone git@github.com:thatsjet/robinhood-rsi-alert.git
 ```
 
 Setup virtual environment (optional)
